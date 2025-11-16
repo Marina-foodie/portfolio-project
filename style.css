@@ -134,7 +134,7 @@
       background: #e0e0e0;
       border-radius: var(--radius-lg);
       width: 100%;
-      min-height: 220px;
+      aspect-ratio: 4 / 3; /* responsive Höhe */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -177,7 +177,7 @@
       background: #e0e0e0;
       border-radius: var(--radius-md);
       width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 4 / 3; /* responsive */
       border: 1px dashed #c7c7c7;
       display: flex;
       align-items: center;
@@ -220,7 +220,7 @@
       background: #e0e0e0;
       border-radius: var(--radius-lg);
       width: 100%;
-      min-height: 260px;
+      aspect-ratio: 4 / 3; /* responsive */
       border: 1px dashed #c7c7c7;
       display: flex;
       align-items: center;
@@ -228,6 +228,7 @@
       font-size: 14px;
       color: #777;
     }
+
 
     /* TESTIMONIALS */
     .testimonials {
@@ -339,3 +340,131 @@
       .hero-title {
         font-size: 26px;
       }
+
+      .about-main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Text + Bild nebeneinander */
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.about-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-title {
+  margin-bottom: 4px;
+}
+
+.about-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.about-paragraph {
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* Bildplatzhalter – responsive */
+.about-image-placeholder {
+  background: #e0e0e0;
+  border-radius: var(--radius-lg);
+  width: 100%;
+  aspect-ratio: 3 / 4;          /* hochkant wie im Layout */
+  border: 1px dashed #c7c7c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Kontaktformular */
+.contact-section {
+  margin-top: 16px;
+}
+
+.contact-form {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.form-field.full-width {
+  flex-basis: 100%;
+}
+
+.form-field label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.form-field input,
+.form-field textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font: inherit;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #111111;
+}
+
+.contact-submit {
+  margin-top: 4px;
+}
+
+/* Aktiver Menüpunkt in der Navigation */
+nav a.active {
+  background: #111111;
+  color: #ffffff;
+  border-radius: 999px;
+}
+
+nav a.active:hover {
+  opacity: 0.9;
+  background: #111111;
+}
+
+/* Responsive Anpassungen für About-Layout */
+@media (max-width: 900px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image-placeholder {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
