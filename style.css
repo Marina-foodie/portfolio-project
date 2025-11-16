@@ -81,6 +81,8 @@
 
     .btn-primary:hover {
       opacity: 0.9;
+      color: #111111;
+      background: #f0f0f0;
     }
 
     .btn-secondary {
