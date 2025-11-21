@@ -487,3 +487,163 @@ footer {
     padding: 16px;
   }
 }
+.ak-landing {
+  background: #f5f5f5;
+  color: #111;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Hero */
+.ak-hero {
+  position: relative;
+  min-height: 360px;
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+.ak-image-placeholder {
+  background: #e1e1e1;
+  border-radius: 1.25rem;
+  border: 1px solid #d4d4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #777;
+}
+
+.ak-hero-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+}
+
+.ak-hero-inner {
+  position: relative;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 5rem;
+  text-align: center;
+}
+
+.ak-hero-kicker {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.ak-hero-title {
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  margin: 0 0 0.75rem;
+}
+
+.ak-hero-subtitle {
+  max-width: 32rem;
+  margin: 0 auto 1.75rem;
+  line-height: 1.6;
+}
+
+/* Services */
+.ak-services {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.ak-service-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.ak-service-row--reverse .ak-service-text {
+  order: 2;
+}
+
+.ak-service-text {
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 2.5rem 2.25rem;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+}
+
+.ak-section-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.ak-service-description {
+  margin-bottom: 1.75rem;
+  line-height: 1.7;
+}
+
+/* Buttons */
+.ak-button {
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.ak-button-secondary {
+  background: transparent;
+  color: #111;
+}
+
+/* Testimonials */
+.ak-testimonials {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.ak-testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.ak-testimonial {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+/* Footer */
+.ak-footer {
+  border-top: 1px solid #dedede;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.ak-footer-social a {
+  margin: 0 0.5rem;
+  color: #555;
+  text-decoration: none;
+}
+
+/* Responsiv */
+@media (max-width: 960px) {
+  .ak-service-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ak-testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ak-testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
