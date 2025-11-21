@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap & Icons (wie bei dir) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,13 +20,18 @@
       src="https://kit.fontawesome.com/a90db47b2b.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Deine Styles -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Schrift -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
     <title>Mein Angebot - Atelier Klartext</title>
   </head>
   <body>
@@ -40,13 +47,16 @@
           <p class="ak-hero-subtitle">
             Ihre Prozesse. Ihre Texte. Unsere Klarheit.
           </p>
-          <a href="/about.html#kontaktformular" class="btn-primary"
-            >Kontaktieren Sie mich</a
+          <!-- Link zum Kontaktformular auf About-Seite -->
+          <a href="/about.html#kontaktformular" class="btn-primary">
+            Kontaktieren Sie mich
+          </a>
+        </div>
       </section>
 
       <!-- Leistungen -->
       <section class="ak-services">
-        <!-- Lektorat -->
+        <!-- Lektorat – Text links, Bild rechts -->
         <div class="ak-service-row">
           <div class="ak-service-text">
             <h2 class="ak-section-title">Lektorat</h2>
@@ -55,7 +65,10 @@
               verständlich und professionell.
             </p>
             <div class="ak-service-actions">
-              <a href="#" class="ak-button">kostenloses Erstgespräch buchen</a>
+              <!-- Öffnet das Pop-up -->
+              <button class="ak-button ak-open-calendar">
+                kostenloses Erstgespräch buchen
+              </button>
             </div>
           </div>
           <div class="ak-service-media">
@@ -65,7 +78,7 @@
           </div>
         </div>
 
-        <!-- Korrektorat -->
+        <!-- Korrektorat – Bild links, Text rechts -->
         <div class="ak-service-row ak-service-row--reverse">
           <div class="ak-service-media">
             <div class="ak-image-placeholder">
@@ -79,12 +92,15 @@
               Zeichensetzung, damit Ihre Texte sicher überzeugen.
             </p>
             <div class="ak-service-actions">
-              <a href="#" class="ak-button">kostenloses Erstgespräch buchen</a>
+              <!-- Öffnet das Pop-up -->
+              <button class="ak-button ak-open-calendar">
+                kostenloses Erstgespräch buchen
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Coaching -->
+        <!-- Coaching – wieder Text links, Bild rechts -->
         <div class="ak-service-row">
           <div class="ak-service-text">
             <h2 class="ak-section-title">Coaching</h2>
@@ -94,7 +110,10 @@
               die überzeugt.
             </p>
             <div class="ak-service-actions">
-              <a href="#" class="ak-button">kostenloses Erstgespräch buchen</a>
+              <!-- Öffnet das Pop-up -->
+              <button class="ak-button ak-open-calendar">
+                kostenloses Erstgespräch buchen
+              </button>
             </div>
           </div>
           <div class="ak-service-media">
@@ -114,41 +133,33 @@
         <div class="ak-testimonial-grid">
           <article class="ak-testimonial">
             <div class="ak-testimonial-icon">◎</div>
-            <h3 class="ak-testimonial-name">Simone - Dissertation</h3>
+            <h3 class="ak-testimonial-name">Simone – Dissertation</h3>
             <p class="ak-testimonial-text">
               „Ein präzises, hilfreiches Lektorat – ich habe mich sehr gut
-                begleitet gefühlt.“
+              begleitet gefühlt.“
             </p>
           </article>
 
           <article class="ak-testimonial">
             <div class="ak-testimonial-icon">◎</div>
-            <h3 class="ak-testimonial-name">Peter - Masterarbeit</h3>
+            <h3 class="ak-testimonial-name">Peter – Masterarbeit</h3>
             <p class="ak-testimonial-text">
-              „Strukturiertes Feedback und motivierende Begleitung – genau
-                das, was ich gebraucht habe.“
+              „Strukturiertes Feedback und motivierende Begleitung – genau das,
+              was ich gebraucht habe.“
             </p>
           </article>
 
           <article class="ak-testimonial">
             <div class="ak-testimonial-icon">◎</div>
-            <h3 class="ak-testimonial-name">Sarah - Fachartikel</h3>
+            <h3 class="ak-testimonial-name">Sarah – Fachartikel</h3>
             <p class="ak-testimonial-text">
               „Sprachlich auf den Punkt gebracht und immer zuverlässig.“
-            </p>
-          </article>
-
-          <article class="ak-testimonial">
-            <div class="ak-testimonial-icon">◎</div>
-            <h3 class="ak-testimonial-name">Kunde 4</h3>
-            <p class="ak-testimonial-text">
-              Body text for your message. Add key experiences and feedback.
             </p>
           </article>
         </div>
       </section>
 
-      <!-- Section-Footer (optional) -->
+      <!-- Footer -->
       <footer>
         <div>Atelier Klartext</div>
         <div class="footer-social">
@@ -159,5 +170,179 @@
         </div>
       </footer>
     </section>
+
+    <!-- Modal / Pop-up für Beratungsgespräch -->
+    <div class="ak-modal-overlay" id="ak-modal-overlay">
+      <div
+        class="ak-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ak-modal-title"
+      >
+        <button
+          class="ak-modal-close"
+          id="ak-modal-close"
+          aria-label="Fenster schließen"
+        >
+          ×
+        </button>
+
+        <h2 id="ak-modal-title">Beratungsgespräch buchen</h2>
+        <p class="ak-modal-intro">
+          Wählen Sie ein Datum und eine Uhrzeit für Ihr Beratungsgespräch. Ich
+          melde mich bei Ihnen zur Bestätigung.
+        </p>
+
+        <form id="ak-booking-form">
+          <div class="ak-form-row">
+            <label for="ak-name">Name</label>
+            <input
+              type="text"
+              id="ak-name"
+              name="name"
+              required
+              placeholder="Ihr Name"
+            />
+          </div>
+
+          <div class="ak-form-row">
+            <label for="ak-email">E-Mail</label>
+            <input
+              type="email"
+              id="ak-email"
+              name="email"
+              required
+              placeholder="Ihre E-Mail-Adresse"
+            />
+          </div>
+
+          <div class="ak-form-row">
+            <label for="ak-date">Datum</label>
+            <input type="date" id="ak-date" name="date" required />
+          </div>
+
+          <div class="ak-form-row">
+            <label for="ak-time">Uhrzeit</label>
+            <select id="ak-time" name="time" required>
+              <option value="">Bitte wählen</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+            </select>
+          </div>
+
+          <div class="ak-form-row">
+            <label for="ak-message">Anliegen (optional)</label>
+            <textarea
+              id="ak-message"
+              name="message"
+              rows="3"
+              placeholder="Worum geht es?"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="ak-button ak-button--full">
+            Termin anfragen
+          </button>
+        </form>
+
+        <p class="ak-modal-note">
+          Hinweis: Dies ist eine Terminanfrage. Die endgültige Bestätigung
+          erhalten Sie per E-Mail.
+        </p>
+      </div>
+    </div>
+
+    <!-- JavaScript für Modal / Pop-up -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const openButtons = document.querySelectorAll(".ak-open-calendar");
+        const overlay = document.getElementById("ak-modal-overlay");
+        const closeBtn = document.getElementById("ak-modal-close");
+        const form = document.getElementById("ak-booking-form");
+        const dateInput = document.getElementById("ak-date");
+
+        // Heutiges Datum als Minimum setzen
+        const today = new Date().toISOString().split("T")[0];
+        dateInput.setAttribute("min", today);
+
+        function openModal() {
+          overlay.classList.add("is-visible");
+          const nameInput = document.getElementById("ak-name");
+          if (nameInput) nameInput.focus();
+        }
+
+        function closeModal() {
+          overlay.classList.remove("is-visible");
+        }
+
+        // Alle "kostenloses Erstgespräch"-Buttons öffnen das Modal
+        openButtons.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            openModal();
+          });
+        });
+
+        // X-Button schließt Modal
+        if (closeBtn) {
+          closeBtn.addEventListener("click", function () {
+            closeModal();
+          });
+        }
+
+        // Klick auf Overlay (außerhalb der Box) schließt Modal
+        overlay.addEventListener("click", function (e) {
+          if (e.target === overlay) {
+            closeModal();
+          }
+        });
+
+        // ESC schließt Modal
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && overlay.classList.contains("is-visible")) {
+            closeModal();
+          }
+        });
+
+        // Formular absenden – aktuell nur Bestätigung, später z.B. Mail/Backend
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("ak-name").value;
+          const email = document.getElementById("ak-email").value;
+          const date = document.getElementById("ak-date").value;
+          const time = document.getElementById("ak-time").value;
+          const message = document.getElementById("ak-message").value;
+
+          alert(
+            "Vielen Dank, " +
+              name +
+              "! Ihre Anfrage für ein Gespräch am " +
+              date +
+              " um " +
+              time +
+              " wurde übermittelt. Sie erhalten in Kürze eine Rückmeldung per E-Mail."
+          );
+
+          form.reset();
+          closeModal();
+
+          // Alternative: Mail-Client öffnen
+          // const subject = encodeURIComponent("Beratungsgespräch Anfrage");
+          // const body = encodeURIComponent(
+          //   "Name: " + name +
+          //   "\nE-Mail: " + email +
+          //   "\nDatum: " + date +
+          //   "\nUhrzeit: " + time +
+          //   "\nAnliegen:\n" + message
+          // );
+          // window.location.href = "mailto:deine.mail@domain.de?subject=" + subject + "&body=" + body;
+        });
+      });
+    </script>
   </body>
 </html>
