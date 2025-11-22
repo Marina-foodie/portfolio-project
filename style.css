@@ -1,6 +1,6 @@
-/* =========================
-   GLOBAL: Variablen & Reset
-   ========================= */
+/* ========================================
+   1. Globale Variablen, Reset & Grundlayout
+   ======================================== */
 
 :root {
   --bg: #f5f5f5;
@@ -26,13 +26,12 @@ html {
   height: 100%;
 }
 
-/* Sticky-Footer-Grundlage */
+/* Seitenaufbau mit möglichem Sticky-Footer */
 body {
   height: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background: var(--bg);
@@ -40,7 +39,7 @@ body {
   line-height: 1.5;
 }
 
-/* Haupt-Wrapper (Startseite / About / Angebot) */
+/* Weißer Karten-Wrapper für Inhalt */
 .page-wrapper {
   max-width: 1120px;
   margin: 0 auto;
@@ -48,20 +47,19 @@ body {
   background: var(--white);
   border-radius: 24px;
   box-shadow: 0 0 0 1px #e3e3e3;
-
-  flex: 1; /* sorgt dafür, dass der Footer unten bleibt */
+  flex: 1;
 }
 
-/* Inhalt (Startseite) */
+/* Standard-Mainlayout */
 main {
   display: flex;
   flex-direction: column;
   gap: 48px;
 }
 
-/* =========================
-   ACCESSIBILITY: Skip-Link
-   ========================= */
+/* ========================================
+   2. Accessibility – Skip-Link
+   ======================================== */
 
 .skip-link {
   position: absolute;
@@ -80,9 +78,9 @@ main {
   left: 16px;
 }
 
-/* =========================
-   HEADER / NAVIGATION
-   ========================= */
+/* ========================================
+   3. Header & Navigation
+   ======================================== */
 
 header {
   display: flex;
@@ -91,7 +89,7 @@ header {
   margin-bottom: 40px;
 }
 
-/* klickbares Logo */
+/* Logo-Text, klickbar zur Startseite */
 .logo {
   font-weight: 600;
   font-size: 18px;
@@ -103,7 +101,7 @@ header {
   text-decoration: underline;
 }
 
-/* Custom-Nav (bootstrap unabhängig) */
+/* Hauptnavigation */
 nav {
   display: flex;
   gap: 16px;
@@ -135,9 +133,9 @@ nav a[aria-current="page"]:hover {
   opacity: 0.9;
 }
 
-/* =========================
-   BUTTONS – global & Angebot
-   ========================= */
+/* ========================================
+   4. Buttons (global & Angebot)
+   ======================================== */
 
 .btn-primary,
 .btn-secondary,
@@ -152,7 +150,6 @@ nav a[aria-current="page"]:hover {
   align-items: center;
   justify-content: center;
   gap: 6px;
-
   transition: background-color 0.18s ease, color 0.18s ease,
     box-shadow 0.18s ease, transform 0.18s ease;
 }
@@ -203,16 +200,16 @@ nav a[aria-current="page"]:hover {
   margin-top: 0.5rem;
 }
 
-/* Kleine CTA-Hilfsklasse */
+/* Kleiner Hilfstext z.B. CTA */
 .cta-text {
   margin-bottom: 20px;
   font-size: 14px;
   color: var(--muted);
 }
 
-/* =========================
-   STARTSEITE – HERO
-   ========================= */
+/* ========================================
+   5. Startseite – Hero-Bereich
+   ======================================== */
 
 .hero {
   display: grid;
@@ -247,16 +244,16 @@ nav a[aria-current="page"]:hover {
   max-width: 100%;
 }
 
-/* SECTION TITLES – generisch */
+/* Einheitliche Abschnittsüberschriften */
 .section-title {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 16px;
 }
 
-/* =========================
-   STARTSEITE – FEATURES
-   ========================= */
+/* ========================================
+   6. Startseite – Qualitätsversprechen
+   ======================================== */
 
 .features {
   display: flex;
@@ -304,9 +301,9 @@ nav a[aria-current="page"]:hover {
   color: var(--muted);
 }
 
-/* =========================
-   STARTSEITE – CTA + IMAGE
-   ========================= */
+/* ========================================
+   7. Startseite – CTA-Bereich
+   ======================================== */
 
 .cta-section {
   display: grid;
@@ -341,9 +338,9 @@ nav a[aria-current="page"]:hover {
   max-width: 100%;
 }
 
-/* =========================
-   STARTSEITE – TESTIMONIALS
-   ========================= */
+/* ========================================
+   8. Startseite – Testimonials
+   ======================================== */
 
 .testimonials {
   display: flex;
@@ -389,9 +386,9 @@ nav a[aria-current="page"]:hover {
   background: #ddd;
 }
 
-/* =========================
-   ABOUT PAGE
-   ========================= */
+/* ========================================
+   9. About-Seite – Layout & Kontakt
+   ======================================== */
 
 .about-main {
   display: flex;
@@ -429,7 +426,7 @@ nav a[aria-current="page"]:hover {
   color: var(--text);
 }
 
-/* Bildplatzhalter – About */
+/* Bildplatzhalter auf About-Seite */
 .about-image-placeholder {
   background: #e0e0e0;
   border-radius: var(--radius-lg);
@@ -446,7 +443,7 @@ nav a[aria-current="page"]:hover {
   max-width: 100%;
 }
 
-/* Kontaktformular-Bereich */
+/* Kontaktformular */
 .contact-section {
   margin-top: 8px;
 }
@@ -508,16 +505,16 @@ nav a[aria-current="page"]:hover {
   align-self: center;
 }
 
-/* =========================
-   ANGEBOT – LAYOUT
-   ========================= */
+/* ========================================
+   10. Angebotsseite – Hero & Leistungen
+   ======================================== */
 
 .ak-landing {
   background: #f5f5f5;
   color: #111;
 }
 
-/* Hero Section auf Angebotsseite */
+/* Hero-Angebot */
 .ak-hero {
   position: relative;
   min-height: 360px;
@@ -551,7 +548,7 @@ nav a[aria-current="page"]:hover {
   margin: 0 auto;
   padding: 6rem 1.5rem 5rem;
   text-align: center;
-  margin-bottom: 4rem; /* Abstand zum ersten Angebot */
+  margin-bottom: 4rem;
 }
 
 .ak-hero-kicker {
@@ -571,7 +568,7 @@ nav a[aria-current="page"]:hover {
   line-height: 1.6;
 }
 
-/* Services Section (Angebot) */
+/* Angebotsboxen */
 .ak-services {
   max-width: 72rem;
   margin: 0 auto;
@@ -590,7 +587,7 @@ nav a[aria-current="page"]:hover {
   flex-direction: row-reverse;
 }
 
-/* Textbox */
+/* Angebot-Textbox */
 .ak-service-text {
   flex: 1;
   background: #fff;
@@ -613,7 +610,7 @@ nav a[aria-current="page"]:hover {
   line-height: 1.7;
 }
 
-/* Bildbox */
+/* Angebots-Bildbox */
 .ak-service-media {
   flex: 1;
   display: flex;
@@ -636,7 +633,7 @@ nav a[aria-current="page"]:hover {
   letter-spacing: 0.08em;
 }
 
-/* Testimonials (Angebot) */
+/* Angebots-Testimonials */
 .ak-testimonials {
   max-width: 72rem;
   margin: 0 auto;
@@ -677,27 +674,31 @@ nav a[aria-current="page"]:hover {
   font-size: 0.95rem;
 }
 
-/* =========================
-   FOOTER – global (vollbreit)
-   ========================= */
+/* ========================================
+   11. Footer – Stil wie Startseite, Breite begrenzt
+   ======================================== */
 
+/* Umfasst den grauen Footer-Bereich; kann innerhalb oder außerhalb von .page-wrapper stehen */
 .site-footer {
-  width: 100%;
-  background: #f5f5f5;
+  margin-top: 3rem;
+  padding: 0;
   border-top: 1px solid var(--border);
-  padding: 2.5rem clamp(1.5rem, 4vw, 3rem);
 }
 
-/* Inhalt an Seitenbreite anpassen */
+/* Inhalt mit grauem Hintergrund und Icons */
 .footer-inner {
   max-width: 1120px;
   margin: 0 auto;
+  background: #f5f5f5;
+  padding: 2.5rem 1.5rem;
+  border-radius: 0 0 16px 16px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
 }
 
@@ -708,7 +709,8 @@ nav a[aria-current="page"]:hover {
 }
 
 .footer-social-label {
-  font-size: 12px;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 /* Runde Icon-Buttons mit Font Awesome */
@@ -723,7 +725,6 @@ nav a[aria-current="page"]:hover {
   font-size: 14px;
   color: var(--muted);
   text-decoration: none;
-
   transition: background-color 0.18s ease, color 0.18s ease,
     border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
@@ -736,9 +737,9 @@ nav a[aria-current="page"]:hover {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 
-/* =========================
-   MODAL / POP-UP (Angebot)
-   ========================= */
+/* ========================================
+   12. Modal / Pop-up (Angebotsseite & Startseite)
+   ======================================== */
 
 .ak-modal-overlay {
   position: fixed;
@@ -787,7 +788,7 @@ nav a[aria-current="page"]:hover {
   line-height: 1.6;
 }
 
-/* Close X */
+/* Schließen-Icon im Modal */
 .ak-modal-close {
   position: absolute;
   top: 0.9rem;
@@ -840,9 +841,20 @@ nav a[aria-current="page"]:hover {
   color: #666;
 }
 
-/* =========================
-   RESPONSIVE BREAKPOINTS
-   ========================= */
+/* ========================================
+   13. Responsive Breakpoints
+   ======================================== */
+
+@media (max-width: 960px) {
+  .ak-service-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ak-testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (max-width: 900px) {
   .hero,
@@ -879,17 +891,6 @@ nav a[aria-current="page"]:hover {
 
   .ak-service-media .ak-image-placeholder {
     min-height: 220px;
-  }
-}
-
-@media (max-width: 960px) {
-  .ak-service-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .ak-testimonial-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
