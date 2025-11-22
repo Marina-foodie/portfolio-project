@@ -43,9 +43,7 @@
           <a href="index.html">Home</a>
           <a href="angebot.html">Mein Angebot</a>
           <a href="about.html" class="active" aria-current="page">Über mich</a>
-          <a href="#kontaktformular" class="btn-primary">
-            Kontaktieren Sie mich
-          </a>
+          <a href="#kontaktformular" class="btn-primary"> 📧 Schreib mir!</a>
         </nav>
       </header>
 
@@ -63,23 +61,18 @@
               entdeckt, wie sehr mich wissenschaftliches Arbeiten fasziniert. Im
               Bachelorstudium in Angewandter Betriebswirtschaft in Klagenfurt
               begann ich dann, andere Studierende zu begleiten: erst mit kleinen
-              Lektoraten, später mit fundiertem Feedback und praktischen Tipps,
-              die ihnen Struktur und Klarheit beim Schreiben gaben.
+              Lektoraten, später mit fundiertem Feedback und praktischen Tipps.
             </p>
 
             <p class="about-paragraph">
-              Im darauffolgenden Masterstudium – mit Schwerpunkt Marketing,
-              Controlling und Unternehmensführung – entwickelte sich daraus ein
-              eigenes Coaching- und Lektoratsangebot, das ich mit viel
-              Leidenschaft selbstständig führte. Nach meinem Umzug in die
-              Schweiz legte ich diese Tätigkeit vorübergehend auf Eis. Nun
-              knüpfe ich wieder dort an, wo mein Herz immer schon lag: Menschen
-              dabei zu unterstützen, ihre Gedanken präzise, verständlich und mit
-              Freude aufs Papier zu bringen.
+              Im darauffolgenden Masterstudium entwickelte sich daraus ein
+              eigenes Coaching- und Lektoratsangebot. Nun knüpfe ich wieder dort
+              an, wo mein Herz immer schon lag: Menschen dabei zu unterstützen,
+              ihre Gedanken präzise, verständlich und mit Freude aufs Papier zu
+              bringen.
             </p>
           </div>
 
-          <!-- Bildplatzhalter, später durch <img> ersetzen -->
           <div class="about-image-placeholder" aria-hidden="true">
             Bildplatzhalter<br />(Porträt / Foto)
           </div>
@@ -93,16 +86,22 @@
         >
           <h2 id="kontakt-heading" class="section-title">Kontaktformular</h2>
 
-          <form class="contact-form" action="#" method="post">
+          <form
+            class="contact-form"
+            action="mailto:atelier-klartext@gmail.com"
+            method="POST"
+            enctype="text/plain"
+          >
             <div class="form-row">
               <div class="form-field">
                 <label for="first-name">Vorname</label>
                 <input
                   type="text"
                   id="first-name"
-                  name="first-name"
+                  name="Vorname"
                   autocomplete="given-name"
-                  placeholder="Ihr Vorname"
+                  placeholder="Vorname"
+                  required
                 />
               </div>
               <div class="form-field">
@@ -110,9 +109,10 @@
                 <input
                   type="text"
                   id="last-name"
-                  name="last-name"
+                  name="Nachname"
                   autocomplete="family-name"
-                  placeholder="Ihr Nachname"
+                  placeholder="Nachname"
+                  required
                 />
               </div>
             </div>
@@ -123,21 +123,23 @@
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  name="E-Mail"
                   autocomplete="email"
-                  placeholder="Ihre E-Mail-Adresse"
+                  placeholder="E-Mail-Adresse"
+                  required
                 />
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-field full-width">
-                <label for="message">Ihre Nachricht</label>
+                <label for="message">Nachricht</label>
                 <textarea
                   id="message"
-                  name="message"
+                  name="Nachricht"
                   rows="5"
-                  placeholder="Schildern Sie kurz Ihr Anliegen oder Ihre Fragen"
+                  placeholder="Hier ist Platz für dein Anliegen oder deine Fragen..."
+                  required
                 ></textarea>
               </div>
             </div>
@@ -155,7 +157,7 @@
           <div class="footer-social" aria-label="Social Media">
             <span class="footer-social-label">Folge mir:</span>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/marina-ortner-9b2816236/"
               class="footer-icon"
               aria-label="LinkedIn"
               target="_blank"
@@ -164,7 +166,7 @@
               <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/marinas.normallife/"
               class="footer-icon"
               aria-label="Instagram"
               target="_blank"
@@ -173,7 +175,7 @@
               <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/marina.ortner"
               class="footer-icon"
               aria-label="Facebook"
               target="_blank"
@@ -185,5 +187,16 @@
         </div>
       </footer>
     </div>
+
+    <!-- Erfolgsmeldung (Du-Form) -->
+    <script>
+      const form = document.querySelector(".contact-form");
+
+      form.addEventListener("submit", function (e) {
+        alert(
+          "Vielen Dank! Deine Nachricht wurde übermittelt. Ich melde mich innerhalb von 24 Stunden bei dir."
+        );
+      });
+    </script>
   </body>
 </html>

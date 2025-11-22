@@ -85,9 +85,9 @@
               Lektorat, Korrektorat &amp; Coaching für Studierende, Forschende
               und Fachtexte.
             </p>
-            <a href="about.html#kontaktformular" class="btn-primary">
-              📧 Schreib mir!
-            </a>
+            <button type="button" class="btn-secondary ak-open-calendar">
+              kostenloses Erstgespräch vereinbaren
+            </button>
           </div>
           <div class="hero-image-placeholder" aria-hidden="true">
             Bildplatzhalter (z. B. Stillleben / Schreibtisch)
@@ -147,8 +147,8 @@
               oder ein individuelles Angebot.
             </p>
             <div class="cta-buttons">
-              <a href="mailto:atelier-klartext@gmail.com" class="btn-primary">
-                E-Mail schreiben
+              <a href="about.html#kontaktformular" class="btn-primary">
+                📧 Schreib mir!
               </a>
               <button type="button" class="btn-secondary ak-open-calendar">
                 kostenloses Erstgespräch vereinbaren
@@ -216,7 +216,7 @@
           <div class="footer-social" aria-label="Social Media">
             <span class="footer-social-label">Folge mir:</span>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/marina-ortner-9b2816236/"
               class="footer-icon"
               aria-label="LinkedIn"
               target="_blank"
@@ -225,7 +225,7 @@
               <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/marinas.normallife/"
               class="footer-icon"
               aria-label="Instagram"
               target="_blank"
@@ -234,7 +234,7 @@
               <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/marina.ortner"
               class="footer-icon"
               aria-label="Facebook"
               target="_blank"
@@ -266,8 +266,8 @@
 
         <h2 id="ak-modal-title">kostenloses Erstgespräch anfragen</h2>
         <p class="ak-modal-intro">
-          Wählen Sie Ihren Wunschtermin für Ihr Erstgespräch aus. Ich melde mich
-          innerhalb von 24&nbsp;Stunden per E-Mail oder Telefon zur Bestätigung.
+          Wähle deinen Wunschtermin für das kostenlose Erstgespräch aus. Ich
+          melde mich innerhalb von 24&nbsp;Stunden per E-Mail zur Bestätigung.
         </p>
 
         <form id="ak-booking-form">
@@ -303,7 +303,7 @@
           <div class="ak-form-row">
             <label for="ak-time">Uhrzeit</label>
             <select id="ak-time" name="time" required>
-              <option value="">Bitte wählen</option>
+              <option value="">Bitte Uhrzeit wählen</option>
               <option value="09:00">09:00</option>
               <option value="10:00">10:00</option>
               <option value="11:00">11:00</option>
@@ -314,7 +314,7 @@
           </div>
 
           <div class="ak-form-row">
-            <label for="ak-message">Anliegen (optional)</label>
+            <label for="ak-message">Bemerkungen (optional)</label>
             <textarea
               id="ak-message"
               name="message"
@@ -330,7 +330,7 @@
 
         <p class="ak-modal-note">
           Hinweis: Dies ist eine Terminanfrage. Die endgültige Terminbestätigung
-          erhalten Sie per E-Mail.
+          bekommst du per E-Mail.
         </p>
       </div>
     </div>
@@ -401,7 +401,7 @@
               date +
               " um " +
               time +
-              " wurde übermittelt. Du erhältst in Kürze eine Terminbestätigung per E-Mail."
+              " wurde übermittelt. Du erhältst innerhalb von 24 Stunden eine Terminbestätigung per E-Mail."
           );
 
           form.reset();
