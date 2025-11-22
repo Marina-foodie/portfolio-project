@@ -35,6 +35,17 @@
     <title>Mein Angebot - Atelier Klartext</title>
   </head>
   <body>
+    <header>
+      <div class="logo">Platzhalter:Logo</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">Über mich</a>
+        <a href="/about.html#kontaktformular" class="btn-primary"
+          >Kontaktieren Sie mich</a
+        >
+      </nav>
+    </header>
+
     <section class="ak-landing">
       <!-- Hero-Bereich -->
       <section class="ak-hero">
@@ -47,10 +58,6 @@
           <p class="ak-hero-subtitle">
             Ihre Prozesse. Ihre Texte. Unsere Klarheit.
           </p>
-          <!-- Link zum Kontaktformular auf About-Seite -->
-          <a href="/about.html#kontaktformular" class="btn-primary">
-            Kontaktieren Sie mich
-          </a>
         </div>
       </section>
 
@@ -187,10 +194,10 @@
           ×
         </button>
 
-        <h2 id="ak-modal-title">Beratungsgespräch buchen</h2>
+        <h2 id="ak-modal-title">Erstgespräch anfragen</h2>
         <p class="ak-modal-intro">
-          Wählen Sie ein Datum und eine Uhrzeit für Ihr Beratungsgespräch. Ich
-          melde mich bei Ihnen zur Bestätigung.
+          Wählen Sie Ihren Wunschtermin für Ihr Erstgesräch aus. Ich melde mich
+          innerhalb von 24h bei Ihnen via Email oder Telefon zur Bestätigung.
         </p>
 
         <form id="ak-booking-form">
@@ -201,7 +208,7 @@
               id="ak-name"
               name="name"
               required
-              placeholder="Ihr Name"
+              placeholder="Vor- und Nachname"
             />
           </div>
 
@@ -212,7 +219,7 @@
               id="ak-email"
               name="email"
               required
-              placeholder="Ihre E-Mail-Adresse"
+              placeholder="E-Mail-Adresse"
             />
           </div>
 
@@ -250,7 +257,7 @@
         </form>
 
         <p class="ak-modal-note">
-          Hinweis: Dies ist eine Terminanfrage. Die endgültige Bestätigung
+          Hinweis: Dies ist eine Terminanfrage. Die endgültige Terminbestätigung
           erhalten Sie per E-Mail.
         </p>
       </div>
@@ -325,22 +332,11 @@
               date +
               " um " +
               time +
-              " wurde übermittelt. Sie erhalten in Kürze eine Rückmeldung per E-Mail."
+              " wurde übermittelt. Sie erhalten in Kürze eine Terminbestätigung per E-Mail."
           );
 
           form.reset();
           closeModal();
-
-          // Alternative: Mail-Client öffnen
-          // const subject = encodeURIComponent("Beratungsgespräch Anfrage");
-          // const body = encodeURIComponent(
-          //   "Name: " + name +
-          //   "\nE-Mail: " + email +
-          //   "\nDatum: " + date +
-          //   "\nUhrzeit: " + time +
-          //   "\nAnliegen:\n" + message
-          // );
-          // window.location.href = "mailto:deine.mail@domain.de?subject=" + subject + "&body=" + body;
         });
       });
     </script>

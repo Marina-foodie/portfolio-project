@@ -1,3 +1,7 @@
+/* =========================
+   GLOBAL: Variablen & Reset
+   ========================= */
+
 :root {
   --bg: #f5f5f5;
   --white: #ffffff;
@@ -16,6 +20,7 @@
   margin: 0;
   padding: 0;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -28,6 +33,7 @@ body {
   line-height: 1.5;
 }
 
+/* Haupt-Wrapper (Startseite / About etc.) */
 .page-wrapper {
   max-width: 1120px;
   margin: 0 auto;
@@ -37,7 +43,16 @@ body {
   box-shadow: 0 0 0 1px #e3e3e3;
 }
 
-/* HEADER / NAV */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* =========================
+   HEADER / NAVIGATION
+   ========================= */
+
 header {
   display: flex;
   align-items: center;
@@ -50,6 +65,7 @@ header {
   font-size: 18px;
 }
 
+/* einfache Custom-Nav (falls du sie nutzt) */
 nav {
   display: flex;
   gap: 16px;
@@ -79,7 +95,10 @@ nav a.active:hover {
   opacity: 0.9;
 }
 
-/* Buttons */
+/* =========================
+   BUTTONS
+   ========================= */
+
 .btn-primary {
   background: var(--button);
   color: var(--button-text);
@@ -120,13 +139,37 @@ nav a.active:hover {
   background: #e7e7e7;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
+/* „ak-Buttons“ für Angebotsseite & Pop-up */
+.ak-button {
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* HERO (Startseite) */
+.ak-button:hover {
+  background: #000;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Vollbreiter Button im Modal */
+.ak-button.ak-button--full {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* =========================
+   STARTSEITE – HERO
+   ========================= */
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
@@ -150,7 +193,7 @@ main {
   background: #e0e0e0;
   border-radius: var(--radius-lg);
   width: 100%;
-  aspect-ratio: 4 / 3; /* responsive Höhe */
+  aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,14 +202,17 @@ main {
   border: 1px dashed #c7c7c7;
 }
 
-/* SECTION TITLES */
+/* SECTION TITLES – generisch */
 .section-title {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 16px;
 }
 
-/* FEATURES (Startseite) */
+/* =========================
+   STARTSEITE – FEATURES
+   ========================= */
+
 .features {
   display: flex;
   flex-direction: column;
@@ -193,7 +239,7 @@ main {
   background: #e0e0e0;
   border-radius: var(--radius-md);
   width: 100%;
-  aspect-ratio: 4 / 3; /* responsive */
+  aspect-ratio: 4 / 3;
   border: 1px dashed #c7c7c7;
   display: flex;
   align-items: center;
@@ -212,7 +258,10 @@ main {
   color: var(--muted);
 }
 
-/* CTA + IMAGE (Startseite) */
+/* =========================
+   STARTSEITE – CTA + IMAGE
+   ========================= */
+
 .cta-section {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 2fr);
@@ -236,7 +285,7 @@ main {
   background: #e0e0e0;
   border-radius: var(--radius-lg);
   width: 100%;
-  aspect-ratio: 4 / 3; /* responsive */
+  aspect-ratio: 4 / 3;
   border: 1px dashed #c7c7c7;
   display: flex;
   align-items: center;
@@ -245,7 +294,10 @@ main {
   color: #777;
 }
 
-/* TESTIMONIALS (Startseite) */
+/* =========================
+   STARTSEITE – TESTIMONIALS
+   ========================= */
+
 .testimonials {
   display: flex;
   flex-direction: column;
@@ -290,38 +342,6 @@ main {
   background: #ddd;
 }
 
-/* FOOTER */
-footer {
-  margin-top: 32px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  color: var(--muted);
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.footer-social {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  font-size: 12px;
-}
-
-.social-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  border: 1px solid #ccc;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-}
-
 /* =========================
    ABOUT PAGE
    ========================= */
@@ -362,12 +382,12 @@ footer {
   color: var(--text);
 }
 
-/* Bildplatzhalter – responsive, hochkant */
+/* Bildplatzhalter – About */
 .about-image-placeholder {
   background: #e0e0e0;
   border-radius: var(--radius-lg);
   width: 100%;
-  aspect-ratio: 1 / 1; /* QUADRAT */
+  aspect-ratio: 1 / 1;
   border: 1px dashed #c7c7c7;
   display: flex;
   align-items: center;
@@ -436,65 +456,20 @@ footer {
 
 .contact-submit {
   margin-top: 4px;
-  width: auto; /* nur so breit wie nötig */
+  width: auto;
   align-self: center;
 }
 
 /* =========================
-   RESPONSIVE
+   ANGEBOT – LAYOUT
    ========================= */
 
-@media (max-width: 900px) {
-  .hero,
-  .cta-section,
-  .about-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-grid,
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  nav {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  .about-image-placeholder {
-    max-width: 360px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 600px) {
-  .page-wrapper {
-    padding: 24px 16px 32px;
-    border-radius: 0;
-  }
-
-  .hero-title {
-    font-size: 26px;
-  }
-
-  .contact-form {
-    padding: 16px;
-  }
-}
 .ak-landing {
   background: #f5f5f5;
   color: #111;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
 }
 
-/* Hero */
+/* Hero Section auf Angebotsseite */
 .ak-hero {
   position: relative;
   min-height: 360px;
@@ -527,6 +502,7 @@ footer {
   margin: 0 auto;
   padding: 6rem 1.5rem 5rem;
   text-align: center;
+  margin-bottom: 4rem; /* zusätzlicher Abstand zum ersten Angebot */
 }
 
 .ak-hero-kicker {
@@ -546,194 +522,7 @@ footer {
   line-height: 1.6;
 }
 
-/* Services */
-.ak-services {
-  max-width: 72rem;
-  margin: 0 auto;
-  padding: 0 1.5rem 4rem;
-}
-
-.ak-service-row {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  margin-bottom: 4rem;
-}
-
-.ak-service-row--reverse .ak-service-text {
-  order: 2;
-}
-
-.ak-service-text {
-  background: #fff;
-  border-radius: 1.25rem;
-  padding: 2.5rem 2.25rem;
-  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
-}
-
-.ak-section-title {
-  font-size: 1.4rem;
-  margin-bottom: 0.75rem;
-}
-
-.ak-service-description {
-  margin-bottom: 1.75rem;
-  line-height: 1.7;
-}
-
-/* Buttons */
-.ak-button {
-  padding: 0.75rem 1.75rem;
-  border-radius: 999px;
-  border: 1px solid #111;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.15s ease;
-}
-
-.ak-button-secondary {
-  background: transparent;
-  color: #111;
-}
-
-/* Testimonials */
-.ak-testimonials {
-  max-width: 72rem;
-  margin: 0 auto;
-  padding: 4rem 1.5rem;
-}
-
-.ak-testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.75rem;
-}
-
-.ak-testimonial {
-  background: #fff;
-  border-radius: 1rem;
-  padding: 1.75rem 1.5rem;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-}
-
-/* Footer */
-.ak-footer {
-  border-top: 1px solid #dedede;
-  padding: 1.5rem 0;
-  text-align: center;
-}
-
-.ak-footer-social a {
-  margin: 0 0.5rem;
-  color: #555;
-  text-decoration: none;
-}
-
-/* Responsiv */
-@media (max-width: 960px) {
-  .ak-service-row {
-    grid-template-columns: 1fr;
-  }
-
-  .ak-testimonial-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .ak-testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =========================
-   Angebot
-   ========================= */
-
-/* ===== Global Layout ===== */
-.ak-landing {
-  background: #f5f5f5;
-  color: #111;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-}
-
-/* ===== Hero Section ===== */
-.ak-hero {
-  position: relative;
-  min-height: 360px;
-  margin-bottom: 4rem;
-  overflow: hidden;
-}
-
-.ak-image-placeholder {
-  background: #e1e1e1;
-  border-radius: 1.25rem;
-  border: 1px solid #d4d4d4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #777;
-}
-
-.ak-hero-bg {
-  position: absolute;
-  inset: 0;
-  border-radius: 0;
-}
-
-.ak-hero-inner {
-  position: relative;
-  max-width: 72rem;
-  margin: 0 auto;
-  padding: 6rem 1.5rem 5rem;
-  text-align: center;
-  margin-bottom: 4rem; /* vorher evtl. 2rem */
-}
-
-.ak-hero-kicker {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-}
-
-.ak-hero-title {
-  font-size: clamp(2.25rem, 4vw, 3rem);
-  margin: 0 0 0.75rem;
-}
-
-.ak-hero-subtitle {
-  max-width: 32rem;
-  margin: 0 auto 1.75rem;
-  line-height: 1.6;
-}
-
-/* ===== Buttons ===== */
-.ak-button {
-  padding: 0.75rem 1.75rem;
-  border-radius: 999px;
-  border: 1px solid #111;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.15s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ak-button:hover {
-  background: #000;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-
-/* ===== Services Section ===== */
+/* Services Section (Angebot) */
 .ak-services {
   max-width: 72rem;
   margin: 0 auto;
@@ -747,6 +536,7 @@ footer {
   margin-bottom: 5rem;
 }
 
+/* abwechselnd Text/Bild & Bild/Text */
 .ak-service-row--reverse {
   flex-direction: row-reverse;
 }
@@ -774,10 +564,12 @@ footer {
   line-height: 1.7;
 }
 
+/* Buttons in Angebotskarten – zentriert */
 .ak-service-actions {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Bildbox */
@@ -803,7 +595,7 @@ footer {
   letter-spacing: 0.08em;
 }
 
-/* ===== Testimonials (Kundenstimmen) ===== */
+/* Testimonials (Angebot) */
 .ak-testimonials {
   max-width: 72rem;
   margin: 0 auto;
@@ -844,69 +636,74 @@ footer {
   font-size: 0.95rem;
 }
 
-/* ===== Footer ===== */
-.ak-footer {
-  border-top: 1px solid #dedede;
-  padding: 1.5rem 0;
-  margin-top: 1.5rem;
-  background: #f5f5f5;
-}
+/* =========================
+   EINHEITLICHER FOOTER
+   ========================= */
 
-.ak-footer-inner {
-  max-width: 72rem;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+footer,
+.ak-footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+  flex-wrap: wrap;
+  gap: 8px;
+  background: transparent;
 }
 
+.footer-social,
+.ak-footer-social {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* Social-Dots größer */
+.social-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.footer-social a,
 .ak-footer-social a {
-  margin: 0 0.5rem;
-  color: #555;
   text-decoration: none;
+  color: var(--muted);
 }
 
-/* ===== Responsive Design ===== */
-@media (max-width: 960px) {
-  .ak-service-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .ak-testimonial-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.footer-social a:hover,
+.ak-footer-social a:hover {
+  color: var(--text);
 }
 
-@media (max-width: 640px) {
-  .ak-testimonial-grid {
-    grid-template-columns: 1fr;
-  }
+/* =========================
+   MODAL / POP-UP (Angebot)
+   ========================= */
 
-  .ak-footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-/* ===== Modal Overlay ===== */
 .ak-modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(15, 23, 42, 0.45);
-  display: none; /* standard: verborgen */
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: 999;
 }
 
-/* sichtbar, wenn Klasse aktiv gesetzt wird */
 .ak-modal-overlay.is-visible {
   display: flex;
 }
 
-/* ===== Modal Box ===== */
 .ak-modal {
   background: #ffffff;
   border-radius: 1.5rem;
@@ -940,7 +737,7 @@ footer {
   line-height: 1.6;
 }
 
-/* Schließen-Button (X) */
+/* Close X */
 .ak-modal-close {
   position: absolute;
   top: 0.9rem;
@@ -953,7 +750,7 @@ footer {
   color: #555;
 }
 
-/* ===== Formular im Modal ===== */
+/* Formular im Modal */
 .ak-form-row {
   display: flex;
   flex-direction: column;
@@ -987,20 +784,85 @@ footer {
   background: #ffffff;
 }
 
-/* Vollbreiter Button im Modal */
-.ak-button.ak-button--full {
-  width: 100%;
-  justify-content: center;
-  margin-top: 0.5rem;
-}
-
 .ak-modal-note {
   margin-top: 0.75rem;
   font-size: 0.8rem;
   color: #666;
 }
 
-/* Optional: mobile Feintuning */
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+
+@media (max-width: 900px) {
+  .hero,
+  .cta-section,
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .about-image-placeholder {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 960px) {
+  .ak-service-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ak-testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .page-wrapper {
+    padding: 24px 16px 32px;
+    border-radius: 0;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .contact-form {
+    padding: 16px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer,
+  .ak-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ak-testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 480px) {
   .ak-modal {
     padding: 2rem 1.5rem 1.75rem;
