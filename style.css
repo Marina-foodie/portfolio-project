@@ -1,7 +1,6 @@
 /* ========================================
    1. Globale Variablen, Reset & Grundlayout
    ======================================== */
-
 :root {
   --bg: #f5f5f5;
   --white: #ffffff;
@@ -26,9 +25,7 @@ html {
   height: 100%;
 }
 
-/* Seitenaufbau mit möglichem Sticky-Footer */
 body {
-  height: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -39,7 +36,7 @@ body {
   line-height: 1.5;
 }
 
-/* Weißer Karten-Wrapper für Inhalt */
+/* Weißer Karten-Wrapper */
 .page-wrapper {
   max-width: 1120px;
   margin: 0 auto;
@@ -60,7 +57,6 @@ main {
 /* ========================================
    2. Accessibility – Skip-Link
    ======================================== */
-
 .skip-link {
   position: absolute;
   left: -999px;
@@ -73,7 +69,6 @@ main {
   text-decoration: none;
   font-size: 14px;
 }
-
 .skip-link:focus {
   left: 16px;
 }
@@ -81,7 +76,6 @@ main {
 /* ========================================
    3. Header & Navigation
    ======================================== */
-
 header {
   display: flex;
   align-items: center;
@@ -136,7 +130,6 @@ nav a[aria-current="page"]:hover {
 /* ========================================
    4. Buttons (global & Angebot)
    ======================================== */
-
 .btn-primary,
 .btn-secondary,
 .ak-button {
@@ -208,9 +201,62 @@ nav a[aria-current="page"]:hover {
 }
 
 /* ========================================
-   5. Startseite – Hero-Bereich
+   5. Bild-Container (einheitlich + schwarzweiß)
    ======================================== */
+.hero-image-placeholder,
+.cta-image-placeholder,
+.card-image-placeholder,
+.about-image-placeholder,
+.ak-image-placeholder,
+.ak-service-media .ak-image-placeholder {
+  background: #e0e0e0;
+  border-radius: 1.25rem;
+  border: 1px solid #d4d4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
 
+/* Standard-Verhältnisse je nach Bereich */
+.hero-image-placeholder,
+.cta-image-placeholder {
+  aspect-ratio: 4 / 3;
+}
+
+.card-image-placeholder {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+}
+
+.about-image-placeholder {
+  aspect-ratio: 1 / 1;
+}
+
+.ak-service-media .ak-image-placeholder {
+  min-height: 290px;
+}
+
+/* Bilder selbst */
+.hero-image-placeholder img,
+.cta-image-placeholder img,
+.card-image-placeholder img,
+.about-image-placeholder img,
+.ak-image-placeholder img,
+.ak-service-media .ak-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+  filter: grayscale(100%);
+}
+
+/* ========================================
+   6. Startseite – Hero-Bereich
+   ======================================== */
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
@@ -230,20 +276,6 @@ nav a[aria-current="page"]:hover {
   margin-bottom: 24px;
 }
 
-.hero-image-placeholder {
-  background: #e0e0e0;
-  border-radius: var(--radius-lg);
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: #777;
-  border: 1px dashed #c7c7c7;
-  max-width: 100%;
-}
-
 /* Einheitliche Abschnittsüberschriften */
 .section-title {
   font-size: 22px;
@@ -252,9 +284,8 @@ nav a[aria-current="page"]:hover {
 }
 
 /* ========================================
-   6. Startseite – Qualitätsversprechen
+   7. Startseite – Qualitätsversprechen
    ======================================== */
-
 .features {
   display: flex;
   flex-direction: column;
@@ -278,17 +309,10 @@ nav a[aria-current="page"]:hover {
 }
 
 .card-image-placeholder {
-  background: #e0e0e0;
-  border-radius: var(--radius-md);
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border: 1px dashed #c7c7c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
+  border-style: dashed;
+  border-width: 1px;
   color: #777;
-  max-width: 100%;
+  font-size: 12px;
 }
 
 .feature-title {
@@ -302,9 +326,8 @@ nav a[aria-current="page"]:hover {
 }
 
 /* ========================================
-   7. Startseite – CTA-Bereich
+   8. Startseite – CTA-Bereich
    ======================================== */
-
 .cta-section {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 2fr);
@@ -324,24 +347,9 @@ nav a[aria-current="page"]:hover {
   flex-wrap: wrap;
 }
 
-.cta-image-placeholder {
-  background: #e0e0e0;
-  border-radius: var(--radius-lg);
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border: 1px dashed #c7c7c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: #777;
-  max-width: 100%;
-}
-
 /* ========================================
-   8. Startseite – Testimonials
+   9. Startseite – Testimonials
    ======================================== */
-
 .testimonials {
   display: flex;
   flex-direction: column;
@@ -387,9 +395,8 @@ nav a[aria-current="page"]:hover {
 }
 
 /* ========================================
-   9. About-Seite – Layout & Kontakt
+   10. About-Seite – Layout & Kontakt
    ======================================== */
-
 .about-main {
   display: flex;
   flex-direction: column;
@@ -424,23 +431,6 @@ nav a[aria-current="page"]:hover {
 .about-paragraph {
   font-size: 14px;
   color: var(--text);
-}
-
-/* Bildplatzhalter auf About-Seite */
-.about-image-placeholder {
-  background: #e0e0e0;
-  border-radius: var(--radius-lg);
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border: 1px dashed #c7c7c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 12px;
-  font-size: 14px;
-  color: #777;
-  max-width: 100%;
 }
 
 /* Kontaktformular */
@@ -506,59 +496,58 @@ nav a[aria-current="page"]:hover {
 }
 
 /* ========================================
-   10. Angebotsseite – Hero & Leistungen
+   11. Angebotsseite – Hero & Leistungen
    ======================================== */
-
 .ak-landing {
   background: #f5f5f5;
   color: #111;
 }
 
-/* Hero-Angebot */
+/* Hero-Angebot mit Bild + Text im Bild */
 .ak-hero {
   position: relative;
-  min-height: 360px;
-  margin-bottom: 4rem;
-  overflow: hidden;
-}
-
-.ak-image-placeholder {
-  background: #e1e1e1;
-  border-radius: 1.25rem;
-  border: 1px solid #d4d4d4;
+  min-height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #777;
-  max-width: 100%;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  margin-bottom: 4rem;
 }
 
+/* Bild als Hintergrund */
 .ak-hero-bg {
   position: absolute;
   inset: 0;
-  border-radius: 0;
 }
 
+.ak-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.75);
+  opacity: 0.55;
+}
+
+/* Text im Hero-Bild */
 .ak-hero-inner {
   position: relative;
   max-width: 72rem;
   margin: 0 auto;
-  padding: 6rem 1.5rem 5rem;
+  padding: 3rem 1.5rem 3.5rem;
   text-align: center;
-  margin-bottom: 4rem;
+  z-index: 2;
 }
 
 .ak-hero-kicker {
   font-size: 0.85rem;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
+  letter-spacing: 0.1em;
 }
 
 .ak-hero-title {
-  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   margin: 0 0 0.75rem;
 }
 
@@ -582,12 +571,10 @@ nav a[aria-current="page"]:hover {
   margin-bottom: 5rem;
 }
 
-/* abwechselnd Text/Bild & Bild/Text */
 .ak-service-row--reverse {
   flex-direction: row-reverse;
 }
 
-/* Angebot-Textbox */
 .ak-service-text {
   flex: 1;
   background: #fff;
@@ -610,27 +597,10 @@ nav a[aria-current="page"]:hover {
   line-height: 1.7;
 }
 
-/* Angebots-Bildbox */
 .ak-service-media {
   flex: 1;
   display: flex;
   align-items: center;
-}
-
-.ak-service-media .ak-image-placeholder {
-  width: 100%;
-  height: 100%;
-  min-height: 290px;
-  border-radius: 1.5rem;
-  border: 1px solid #ddd;
-  background: #f3f3f3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #888;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 
 /* Angebots-Testimonials */
@@ -675,24 +645,20 @@ nav a[aria-current="page"]:hover {
 }
 
 /* ========================================
-   11. Footer – Stil wie Startseite, Breite begrenzt
+   12. Footer – Stil wie Startseite, Breite begrenzt
    ======================================== */
-
-/* Umfasst den grauen Footer-Bereich; kann innerhalb oder außerhalb von .page-wrapper stehen */
 .site-footer {
   margin-top: 3rem;
   padding: 0;
   border-top: 1px solid var(--border);
 }
 
-/* Inhalt mit grauem Hintergrund und Icons */
 .footer-inner {
   max-width: 1120px;
   margin: 0 auto;
   background: #f5f5f5;
   padding: 2.5rem 1.5rem;
   border-radius: 0 0 16px 16px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -713,7 +679,6 @@ nav a[aria-current="page"]:hover {
   color: var(--muted);
 }
 
-/* Runde Icon-Buttons mit Font Awesome */
 .footer-icon {
   width: 32px;
   height: 32px;
@@ -738,9 +703,8 @@ nav a[aria-current="page"]:hover {
 }
 
 /* ========================================
-   12. Modal / Pop-up (Angebotsseite & Startseite)
+   13. Modal / Pop-up (Angebotsseite & Startseite)
    ======================================== */
-
 .ak-modal-overlay {
   position: fixed;
   inset: 0;
@@ -842,9 +806,8 @@ nav a[aria-current="page"]:hover {
 }
 
 /* ========================================
-   13. Responsive Breakpoints
+   14. Responsive Breakpoints
    ======================================== */
-
 @media (max-width: 960px) {
   .ak-service-row {
     flex-direction: column;
