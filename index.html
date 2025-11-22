@@ -3,7 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <title>Atelier Klartext – Lektorat, Korrektorat &amp; Coaching</title>
+    <meta
+      name="description"
+      content="Atelier Klartext by Marina Ortner bietet Lektorat, Korrektorat und Coaching für Studierende, Forschende und Fachtexte."
+    />
+
+    <!-- Open Graph (Basic-SEO) -->
+    <meta
+      property="og:title"
+      content="Atelier Klartext – Lektorat &amp; Coaching"
+    />
+    <meta
+      property="og:description"
+      content="Lektorat, Korrektorat &amp; Coaching für wissenschaftliche Arbeiten und Fachtexte."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_CH" />
+
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,56 +38,75 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/a90db47b2b.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <title>Atelier Klartext</title>
   </head>
   <body>
+    <!-- Skip-Link für Screenreader & Tastatur -->
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
     <div class="page-wrapper">
       <header>
-        <div class="logo">Platzhalter:Logo</div>
-        <nav>
+        <a href="index.html" class="logo">Atelier Klartext</a>
+
+        <nav aria-label="Hauptnavigation">
+          <a href="index.html" class="active" aria-current="page">Home</a>
           <a href="angebot.html">Mein Angebot</a>
           <a href="about.html">Über mich</a>
-          <a href="/about.html#kontaktformular" class="btn-primary"
-            >Kontaktieren Sie mich</a
-          >
+          <a href="about.html#kontaktformular" class="btn-primary">
+            📧 Schreib mir!
+          </a>
         </nav>
       </header>
 
-      <main>
+      <main id="main">
         <!-- HERO -->
-        <section class="hero">
+        <section class="hero" aria-labelledby="hero-heading">
           <div>
-            <h1 class="hero-title">Atelier Klartext by Marina Ortner</h1>
+            <h1 id="hero-heading" class="hero-title">
+              Atelier Klartext by Marina Ortner
+            </h1>
             <p class="hero-subtitle">
               Lektorat, Korrektorat &amp; Coaching für Studierende, Forschende
               und Fachtexte.
             </p>
-            <a href="/about.html#kontaktformular" class="btn-primary"
-              >Kontaktieren Sie mich</a
-            >
+            <a href="about.html#kontaktformular" class="btn-primary">
+              📧 Schreib mir!
+            </a>
           </div>
-          <div class="hero-image-placeholder">
+          <div class="hero-image-placeholder" aria-hidden="true">
             Bildplatzhalter (z. B. Stillleben / Schreibtisch)
           </div>
         </section>
 
         <!-- FEATURES -->
-        <section class="features">
-          <h2 class="section-title">Mein Qualitätsversprechen</h2>
+        <section
+          class="features"
+          aria-labelledby="qualitaetsversprechen-heading"
+        >
+          <h2 id="qualitaetsversprechen-heading" class="section-title">
+            Mein Qualitätsversprechen
+          </h2>
           <div class="feature-grid">
             <article class="feature-card">
-              <div class="card-image-placeholder">Bildplatzhalter</div>
+              <div class="card-image-placeholder" aria-hidden="true">
+                Bildplatzhalter
+              </div>
               <h3 class="feature-title">Professionell &amp; verständlich</h3>
               <p class="feature-text">
                 Stilistisch sauber, wissenschaftlich präzise – für Texte, die
@@ -72,7 +115,9 @@
             </article>
 
             <article class="feature-card">
-              <div class="card-image-placeholder">Bildplatzhalter</div>
+              <div class="card-image-placeholder" aria-hidden="true">
+                Bildplatzhalter
+              </div>
               <h3 class="feature-title">Individuelle Betreuung</h3>
               <p class="feature-text">
                 Begleitung auf Augenhöhe – von der ersten Idee bis zum fertigen
@@ -81,7 +126,9 @@
             </article>
 
             <article class="feature-card">
-              <div class="card-image-placeholder">Bildplatzhalter</div>
+              <div class="card-image-placeholder" aria-hidden="true">
+                Bildplatzhalter
+              </div>
               <h3 class="feature-title">Erfahren &amp; zuverlässig</h3>
               <p class="feature-text">
                 Lektorats- und Coachingpraxis seit dem Studium, mit Blick fürs
@@ -95,29 +142,29 @@
         <section class="cta-section" id="kontakt">
           <div>
             <h2 class="cta-title">Jetzt unverbindlich anfragen</h2>
-            <p
-              style="margin-bottom: 20px; font-size: 14px; color: var(--muted)"
-            >
-              Schreiben Sie mir für ein erstes, unverbindliches Kennenlernen
+            <p class="cta-text">
+              Schreib mir gerne für ein erstes, unverbindliches Kennenlernen
               oder ein individuelles Angebot.
             </p>
             <div class="cta-buttons">
-              <a href="mailto:atelier-klartext@gmail.com" class="btn-primary"
-                >E-Mail</a
-              >
-              <a href="/about.html#kontaktformular" class="btn-secondary"
-                >Beratungstermin vereinbaren</a
-              >
+              <a href="mailto:atelier-klartext@gmail.com" class="btn-primary">
+                E-Mail schreiben
+              </a>
+              <button type="button" class="btn-secondary ak-open-calendar">
+                kostenloses Erstgespräch vereinbaren
+              </button>
             </div>
           </div>
-          <div class="cta-image-placeholder">
+          <div class="cta-image-placeholder" aria-hidden="true">
             Bildplatzhalter (z. B. Arrangement mit Früchten / Schreibszene)
           </div>
         </section>
 
         <!-- TESTIMONIALS -->
-        <section class="testimonials">
-          <h2 class="section-title">Das sagen meine Kunden</h2>
+        <section class="testimonials" aria-labelledby="referenzen-heading">
+          <h2 id="referenzen-heading" class="section-title">
+            Das sagen meine Kund:innen
+          </h2>
           <div class="testimonial-grid">
             <article class="testimonial-card">
               <p class="testimonial-quote">
@@ -125,7 +172,7 @@
                 begleitet gefühlt.“
               </p>
               <div class="testimonial-meta">
-                <div class="avatar-placeholder"></div>
+                <div class="avatar-placeholder" aria-hidden="true"></div>
                 <div>
                   <div>Simone</div>
                   <div>Dissertation</div>
@@ -139,7 +186,7 @@
                 das, was ich gebraucht habe.“
               </p>
               <div class="testimonial-meta">
-                <div class="avatar-placeholder"></div>
+                <div class="avatar-placeholder" aria-hidden="true"></div>
                 <div>
                   <div>Peter</div>
                   <div>Masterarbeit</div>
@@ -152,7 +199,7 @@
                 „Sprachlich auf den Punkt gebracht und immer zuverlässig.“
               </p>
               <div class="testimonial-meta">
-                <div class="avatar-placeholder"></div>
+                <div class="avatar-placeholder" aria-hidden="true"></div>
                 <div>
                   <div>Sarah</div>
                   <div>Fachartikel</div>
@@ -162,16 +209,212 @@
           </div>
         </section>
       </main>
-
-      <footer>
-        <div>Atelier Klartext</div>
-        <div class="footer-social">
-          <span>Social:</span>
-          <span class="social-dot">in</span>
-          <span class="social-dot">ig</span>
-          <span class="social-dot">f</span>
-        </div>
-      </footer>
     </div>
+
+    <!-- Neuer, vollbreiter Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left">© Atelier Klartext</div>
+        <div class="footer-social" aria-label="Social Media">
+          <span class="footer-social-label">Folgen Sie mir:</span>
+          <a
+            href="#"
+            class="footer-icon"
+            aria-label="LinkedIn (öffnet in neuem Tab)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a
+            href="#"
+            class="footer-icon"
+            aria-label="Instagram (öffnet in neuem Tab)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a
+            href="#"
+            class="footer-icon"
+            aria-label="Facebook (öffnet in neuem Tab)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal / Pop-up für kostenloses Erstgespräch -->
+    <div class="ak-modal-overlay" id="ak-modal-overlay" aria-hidden="true">
+      <div
+        class="ak-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="ak-modal-title"
+      >
+        <button
+          class="ak-modal-close"
+          id="ak-modal-close"
+          type="button"
+          aria-label="Fenster schließen"
+        >
+          ×
+        </button>
+
+        <h2 id="ak-modal-title">kostenloses Erstgespräch anfragen</h2>
+        <p class="ak-modal-intro">
+          Wählen Sie Ihren Wunschtermin für Ihr Erstgespräch aus. Ich melde mich
+          innerhalb von 24&nbsp;Stunden per E-Mail oder Telefon zur Bestätigung.
+        </p>
+
+        <form id="ak-booking-form">
+          <div class="ak-form-row">
+            <label for="ak-name">Name</label>
+            <input
+              type="text"
+              id="ak-name"
+              name="name"
+              required
+              autocomplete="name"
+              placeholder="Vor- und Nachname"
+            />
+          </div>
+
+          <div class="ak-form-row">
+            <label for="ak-email">E-Mail</label>
+            <input
+              type="email"
+              id="ak-email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="E-Mail-Adresse"
+            />
+          </div>
+
+          <div class="ak-form-row">
+            <label for="ak-date">Datum</label>
+            <input type="date" id="ak-date" name="date" required />
+          </div>
+
+          <div class="ak-form-row">
+            <label for="ak-time">Uhrzeit</label>
+            <select id="ak-time" name="time" required>
+              <option value="">Bitte wählen</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+            </select>
+          </div>
+
+          <div class="ak-form-row">
+            <label for="ak-message">Anliegen (optional)</label>
+            <textarea
+              id="ak-message"
+              name="message"
+              rows="3"
+              placeholder="Worum geht es?"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="ak-button ak-button--full">
+            Termin anfragen
+          </button>
+        </form>
+
+        <p class="ak-modal-note">
+          Hinweis: Dies ist eine Terminanfrage. Die endgültige Terminbestätigung
+          erhalten Sie per E-Mail.
+        </p>
+      </div>
+    </div>
+
+    <!-- JavaScript für Modal / Pop-up -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const openButtons = document.querySelectorAll(".ak-open-calendar");
+        const overlay = document.getElementById("ak-modal-overlay");
+        const closeBtn = document.getElementById("ak-modal-close");
+        const form = document.getElementById("ak-booking-form");
+        const dateInput = document.getElementById("ak-date");
+
+        if (!overlay || !form || !dateInput) return;
+
+        // Heutiges Datum als Minimum setzen
+        const today = new Date().toISOString().split("T")[0];
+        dateInput.setAttribute("min", today);
+
+        function openModal() {
+          overlay.classList.add("is-visible");
+          overlay.setAttribute("aria-hidden", "false");
+          const nameInput = document.getElementById("ak-name");
+          if (nameInput) nameInput.focus();
+        }
+
+        function closeModal() {
+          overlay.classList.remove("is-visible");
+          overlay.setAttribute("aria-hidden", "true");
+        }
+
+        // Alle Buttons mit .ak-open-calendar öffnen das Modal
+        openButtons.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            openModal();
+          });
+        });
+
+        // X-Button schließt Modal
+        if (closeBtn) {
+          closeBtn.addEventListener("click", function () {
+            closeModal();
+          });
+        }
+
+        // Klick auf Overlay (außerhalb der Box) schließt Modal
+        overlay.addEventListener("click", function (e) {
+          if (e.target === overlay) {
+            closeModal();
+          }
+        });
+
+        // ESC schließt Modal
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && overlay.classList.contains("is-visible")) {
+            closeModal();
+          }
+        });
+
+        // Formular absenden – aktuell nur Bestätigung
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("ak-name").value;
+          const email = document.getElementById("ak-email").value;
+          const date = document.getElementById("ak-date").value;
+          const time = document.getElementById("ak-time").value;
+
+          alert(
+            "Vielen Dank, " +
+              name +
+              "! Deine Anfrage für ein Gespräch am " +
+              date +
+              " um " +
+              time +
+              " wurde übermittelt. Du erhältst in Kürze eine Terminbestätigung per E-Mail."
+          );
+
+          form.reset();
+          closeModal();
+        });
+      });
+    </script>
   </body>
 </html>

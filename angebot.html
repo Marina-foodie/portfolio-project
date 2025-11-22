@@ -3,9 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Bootstrap & Icons (wie bei dir) -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <title>Mein Angebot – Atelier Klartext</title>
+    <meta
+      name="description"
+      content="Lektorat, Korrektorat und Coaching: Das Angebot von Atelier Klartext für wissenschaftliche Arbeiten und Fachtexte."
+    />
+
+    <meta property="og:title" content="Mein Angebot – Atelier Klartext" />
+    <meta
+      property="og:description"
+      content="Lektorat, Korrektorat und Coaching für wissenschaftliche Texte."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_CH" />
+
+    <!-- Bootstrap & Icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,165 +39,178 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Deine Styles -->
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Schrift -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-
-    <title>Mein Angebot - Atelier Klartext</title>
   </head>
   <body>
-    <header>
-      <div class="logo">Platzhalter:Logo</div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">Über mich</a>
-        <a href="/about.html#kontaktformular" class="btn-primary"
-          >Kontaktieren Sie mich</a
+    <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+    <div class="page-wrapper">
+      <header>
+        <a href="index.html" class="logo">Atelier Klartext</a>
+        <nav aria-label="Hauptnavigation">
+          <a href="index.html">Home</a>
+          <a href="angebot.html" class="active" aria-current="page">
+            Mein Angebot
+          </a>
+          <a href="about.html">Über mich</a>
+          <a href="about.html#kontaktformular" class="btn-primary">
+            Kontaktieren Sie mich
+          </a>
+        </nav>
+      </header>
+
+      <main id="main" class="ak-landing">
+        <!-- Hero-Bereich -->
+        <section class="ak-hero" aria-labelledby="angebot-heading">
+          <div class="ak-hero-bg ak-image-placeholder" aria-hidden="true">
+            <span>Bildplatzhalter Hero</span>
+          </div>
+          <div class="ak-hero-inner">
+            <p class="ak-hero-kicker">Mein Angebot</p>
+            <h1 id="angebot-heading" class="ak-hero-title">
+              Lektorat, Korrektorat &amp; Coaching
+            </h1>
+            <p class="ak-hero-subtitle">
+              Klarheit für Ihre wissenschaftlichen Texte – von der Idee bis zum
+              fertigen Manuskript.
+            </p>
+          </div>
+        </section>
+
+        <!-- Leistungen -->
+        <section class="ak-services" aria-label="Leistungen">
+          <!-- Lektorat – Text links, Bild rechts -->
+          <article class="ak-service-row">
+            <div class="ak-service-text">
+              <h2 class="ak-section-title">Lektorat</h2>
+              <p class="ak-service-description">
+                Stilistische und inhaltliche Optimierung Ihrer Texte – präzise,
+                verständlich und professionell. Ich achte auf roten Faden,
+                Lesefluss und wissenschaftliche Argumentation.
+              </p>
+              <div class="ak-service-actions">
+                <button class="ak-button ak-open-calendar" type="button">
+                  kostenloses Erstgespräch buchen
+                </button>
+              </div>
+            </div>
+            <div class="ak-service-media">
+              <div class="ak-image-placeholder" aria-hidden="true">
+                <span>Bildplatzhalter Lektorat</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Korrektorat – Bild links, Text rechts -->
+          <article class="ak-service-row ak-service-row--reverse">
+            <div class="ak-service-media">
+              <div class="ak-image-placeholder" aria-hidden="true">
+                <span>Bildplatzhalter Korrektorat</span>
+              </div>
+            </div>
+            <div class="ak-service-text">
+              <h2 class="ak-section-title">Korrektorat</h2>
+              <p class="ak-service-description">
+                Sorgfältige Prüfung von Rechtschreibung, Grammatik und
+                Zeichensetzung – für Texte, die formal einwandfrei und leicht
+                lesbar sind.
+              </p>
+              <div class="ak-service-actions">
+                <button class="ak-button ak-open-calendar" type="button">
+                  kostenloses Erstgespräch buchen
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Coaching – wieder Text links, Bild rechts -->
+          <article class="ak-service-row">
+            <div class="ak-service-text">
+              <h2 class="ak-section-title">Coaching</h2>
+              <p class="ak-service-description">
+                Individuelle Begleitung rund um akademisches Schreiben:
+                Struktur, Zeitplanung, Argumentation und Überwindung von
+                Schreibblockaden – flexibel und bedürfnisorientiert.
+              </p>
+              <div class="ak-service-actions">
+                <button class="ak-button ak-open-calendar" type="button">
+                  kostenloses Erstgespräch buchen
+                </button>
+              </div>
+            </div>
+            <div class="ak-service-media">
+              <div class="ak-image-placeholder" aria-hidden="true">
+                <span>Bildplatzhalter Coaching</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- Kundenstimmen -->
+        <section
+          class="ak-testimonials"
+          id="kundenstimmen"
+          aria-labelledby="kundenstimmen-heading"
         >
-      </nav>
-    </header>
+          <h2
+            id="kundenstimmen-heading"
+            class="ak-section-title ak-testimonials-title"
+          >
+            Was sagen meine Kund:innen?
+          </h2>
 
-    <section class="ak-landing">
-      <!-- Hero-Bereich -->
-      <section class="ak-hero">
-        <div class="ak-hero-bg ak-image-placeholder">
-          <span>Bildplatzhalter Hero</span>
-        </div>
-        <div class="ak-hero-inner">
-          <p class="ak-hero-kicker">Mein Angebot</p>
-          <h1 class="ak-hero-title">Atelier Klartext</h1>
-          <p class="ak-hero-subtitle">
-            Ihre Prozesse. Ihre Texte. Unsere Klarheit.
-          </p>
-        </div>
-      </section>
+          <div class="ak-testimonial-grid">
+            <article class="ak-testimonial">
+              <div class="ak-testimonial-icon" aria-hidden="true">◎</div>
+              <h3 class="ak-testimonial-name">Simone – Dissertation</h3>
+              <p class="ak-testimonial-text">
+                „Ein präzises, hilfreiches Lektorat – ich habe mich sehr gut
+                begleitet gefühlt.“
+              </p>
+            </article>
 
-      <!-- Leistungen -->
-      <section class="ak-services">
-        <!-- Lektorat – Text links, Bild rechts -->
-        <div class="ak-service-row">
-          <div class="ak-service-text">
-            <h2 class="ak-section-title">Lektorat</h2>
-            <p class="ak-service-description">
-              Stilistische und inhaltliche Optimierung Ihrer Texte – präzise,
-              verständlich und professionell.
-            </p>
-            <div class="ak-service-actions">
-              <!-- Öffnet das Pop-up -->
-              <button class="ak-button ak-open-calendar">
-                kostenloses Erstgespräch buchen
-              </button>
-            </div>
+            <article class="ak-testimonial">
+              <div class="ak-testimonial-icon" aria-hidden="true">◎</div>
+              <h3 class="ak-testimonial-name">Peter – Masterarbeit</h3>
+              <p class="ak-testimonial-text">
+                „Strukturiertes Feedback und motivierende Begleitung – genau
+                das, was ich gebraucht habe.“
+              </p>
+            </article>
+
+            <article class="ak-testimonial">
+              <div class="ak-testimonial-icon" aria-hidden="true">◎</div>
+              <h3 class="ak-testimonial-name">Sarah – Fachartikel</h3>
+              <p class="ak-testimonial-text">
+                „Sprachlich auf den Punkt gebracht und immer zuverlässig.“
+              </p>
+            </article>
           </div>
-          <div class="ak-service-media">
-            <div class="ak-image-placeholder">
-              <span>Bildplatzhalter Lektorat</span>
-            </div>
-          </div>
-        </div>
+        </section>
+      </main>
 
-        <!-- Korrektorat – Bild links, Text rechts -->
-        <div class="ak-service-row ak-service-row--reverse">
-          <div class="ak-service-media">
-            <div class="ak-image-placeholder">
-              <span>Bildplatzhalter Korrektorat</span>
-            </div>
-          </div>
-          <div class="ak-service-text">
-            <h2 class="ak-section-title">Korrektorat</h2>
-            <p class="ak-service-description">
-              Sorgfältige Prüfung von Rechtschreibung, Grammatik und
-              Zeichensetzung, damit Ihre Texte sicher überzeugen.
-            </p>
-            <div class="ak-service-actions">
-              <!-- Öffnet das Pop-up -->
-              <button class="ak-button ak-open-calendar">
-                kostenloses Erstgespräch buchen
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Coaching – wieder Text links, Bild rechts -->
-        <div class="ak-service-row">
-          <div class="ak-service-text">
-            <h2 class="ak-section-title">Coaching</h2>
-            <p class="ak-service-description">
-              Individuelle Unterstützung rund um akademisches Schreiben,
-              Struktur, Zielsetzung und eine wissenschaftliche Argumentation,
-              die überzeugt.
-            </p>
-            <div class="ak-service-actions">
-              <!-- Öffnet das Pop-up -->
-              <button class="ak-button ak-open-calendar">
-                kostenloses Erstgespräch buchen
-              </button>
-            </div>
-          </div>
-          <div class="ak-service-media">
-            <div class="ak-image-placeholder">
-              <span>Bildplatzhalter Coaching</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Kundenstimmen -->
-      <section class="ak-testimonials" id="kundenstimmen">
-        <h2 class="ak-section-title ak-testimonials-title">
-          Was sagen meine Kunden
-        </h2>
-
-        <div class="ak-testimonial-grid">
-          <article class="ak-testimonial">
-            <div class="ak-testimonial-icon">◎</div>
-            <h3 class="ak-testimonial-name">Simone – Dissertation</h3>
-            <p class="ak-testimonial-text">
-              „Ein präzises, hilfreiches Lektorat – ich habe mich sehr gut
-              begleitet gefühlt.“
-            </p>
-          </article>
-
-          <article class="ak-testimonial">
-            <div class="ak-testimonial-icon">◎</div>
-            <h3 class="ak-testimonial-name">Peter – Masterarbeit</h3>
-            <p class="ak-testimonial-text">
-              „Strukturiertes Feedback und motivierende Begleitung – genau das,
-              was ich gebraucht habe.“
-            </p>
-          </article>
-
-          <article class="ak-testimonial">
-            <div class="ak-testimonial-icon">◎</div>
-            <h3 class="ak-testimonial-name">Sarah – Fachartikel</h3>
-            <p class="ak-testimonial-text">
-              „Sprachlich auf den Punkt gebracht und immer zuverlässig.“
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Footer -->
       <footer>
-        <div>Atelier Klartext</div>
-        <div class="footer-social">
+        <div>© Atelier Klartext</div>
+        <div class="footer-social" aria-label="Social Media">
           <span>Social:</span>
-          <span class="social-dot">in</span>
-          <span class="social-dot">ig</span>
-          <span class="social-dot">f</span>
+          <span class="social-dot" aria-hidden="true">in</span>
+          <span class="social-dot" aria-hidden="true">ig</span>
+          <span class="social-dot" aria-hidden="true">f</span>
         </div>
       </footer>
-    </section>
+    </div>
 
     <!-- Modal / Pop-up für Beratungsgespräch -->
-    <div class="ak-modal-overlay" id="ak-modal-overlay">
+    <div class="ak-modal-overlay" id="ak-modal-overlay" aria-hidden="true">
       <div
         class="ak-modal"
         role="dialog"
@@ -189,15 +220,16 @@
         <button
           class="ak-modal-close"
           id="ak-modal-close"
+          type="button"
           aria-label="Fenster schließen"
         >
           ×
         </button>
 
-        <h2 id="ak-modal-title">Erstgespräch anfragen</h2>
+        <h2 id="ak-modal-title">kostenloses Erstgespräch anfragen</h2>
         <p class="ak-modal-intro">
-          Wählen Sie Ihren Wunschtermin für Ihr Erstgesräch aus. Ich melde mich
-          innerhalb von 24h bei Ihnen via Email oder Telefon zur Bestätigung.
+          Wählen Sie Ihren Wunschtermin für Ihr Erstgespräch aus. Ich melde mich
+          innerhalb von 24&nbsp;Stunden per E-Mail oder Telefon zur Bestätigung.
         </p>
 
         <form id="ak-booking-form">
@@ -208,6 +240,7 @@
               id="ak-name"
               name="name"
               required
+              autocomplete="name"
               placeholder="Vor- und Nachname"
             />
           </div>
@@ -219,6 +252,7 @@
               id="ak-email"
               name="email"
               required
+              autocomplete="email"
               placeholder="E-Mail-Adresse"
             />
           </div>
@@ -263,7 +297,7 @@
       </div>
     </div>
 
-    <!-- JavaScript für Modal / Pop-up -->
+    <!-- JavaScript für Modal / Pop-up mit kleinen A11y-Verbesserungen -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const openButtons = document.querySelectorAll(".ak-open-calendar");
@@ -278,12 +312,14 @@
 
         function openModal() {
           overlay.classList.add("is-visible");
+          overlay.setAttribute("aria-hidden", "false");
           const nameInput = document.getElementById("ak-name");
           if (nameInput) nameInput.focus();
         }
 
         function closeModal() {
           overlay.classList.remove("is-visible");
+          overlay.setAttribute("aria-hidden", "true");
         }
 
         // Alle "kostenloses Erstgespräch"-Buttons öffnen das Modal
@@ -315,7 +351,7 @@
           }
         });
 
-        // Formular absenden – aktuell nur Bestätigung, später z.B. Mail/Backend
+        // Formular absenden – aktuell nur Bestätigung
         form.addEventListener("submit", function (e) {
           e.preventDefault();
 
@@ -323,7 +359,6 @@
           const email = document.getElementById("ak-email").value;
           const date = document.getElementById("ak-date").value;
           const time = document.getElementById("ak-time").value;
-          const message = document.getElementById("ak-message").value;
 
           alert(
             "Vielen Dank, " +

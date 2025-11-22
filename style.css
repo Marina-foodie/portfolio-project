@@ -23,9 +23,16 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
+/* Sticky-Footer-Grundlage */
 body {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   background: var(--bg);
@@ -33,7 +40,7 @@ body {
   line-height: 1.5;
 }
 
-/* Haupt-Wrapper (Startseite / About etc.) */
+/* Haupt-Wrapper (Startseite / About / Angebot) */
 .page-wrapper {
   max-width: 1120px;
   margin: 0 auto;
@@ -41,12 +48,36 @@ body {
   background: var(--white);
   border-radius: 24px;
   box-shadow: 0 0 0 1px #e3e3e3;
+
+  flex: 1; /* sorgt dafür, dass der Footer unten bleibt */
 }
 
+/* Inhalt (Startseite) */
 main {
   display: flex;
   flex-direction: column;
   gap: 48px;
+}
+
+/* =========================
+   ACCESSIBILITY: Skip-Link
+   ========================= */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  padding: 8px 12px;
+  background: #000;
+  color: #fff;
+  border-radius: 999px;
+  z-index: 1000;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.skip-link:focus {
+  left: 16px;
 }
 
 /* =========================
@@ -60,12 +91,19 @@ header {
   margin-bottom: 40px;
 }
 
+/* klickbares Logo */
 .logo {
   font-weight: 600;
   font-size: 18px;
+  text-decoration: none;
+  color: var(--text);
 }
 
-/* einfache Custom-Nav (falls du sie nutzt) */
+.logo:hover {
+  text-decoration: underline;
+}
+
+/* Custom-Nav (bootstrap unabhängig) */
 nav {
   display: flex;
   gap: 16px;
@@ -85,26 +123,28 @@ nav a:hover {
 }
 
 /* Aktiver Menüpunkt */
-nav a.active {
+nav a.active,
+nav a[aria-current="page"] {
   background: #111111;
   color: #ffffff;
 }
 
-nav a.active:hover {
+nav a.active:hover,
+nav a[aria-current="page"]:hover {
   background: #111111;
   opacity: 0.9;
 }
 
 /* =========================
-   BUTTONS
+   BUTTONS – global & Angebot
    ========================= */
 
-.btn-primary {
-  background: var(--button);
-  color: var(--button-text);
+.btn-primary,
+.btn-secondary,
+.ak-button {
   border-radius: var(--radius-sm);
-  padding: 8px 18px;
-  border: none;
+  padding: 0.7rem 1.7rem;
+  border: 1px solid transparent;
   cursor: pointer;
   font-size: 14px;
   text-decoration: none;
@@ -112,51 +152,48 @@ nav a.active:hover {
   align-items: center;
   justify-content: center;
   gap: 6px;
+
+  transition: background-color 0.18s ease, color 0.18s ease,
+    box-shadow 0.18s ease, transform 0.18s ease;
 }
 
-.btn-primary:hover {
-  opacity: 0.9;
+/* Haupt-CTA (schwarz) */
+.btn-primary,
+.ak-button {
+  background: var(--button);
+  color: var(--button-text);
+  border-color: var(--button);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:hover,
+.ak-button:hover {
   background: #000000;
+  border-color: #000000;
   color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
+/* Sekundärer Button */
 .btn-secondary {
   background: #f3f3f3;
   color: var(--text);
-  border-radius: var(--radius-sm);
-  padding: 8px 18px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
+  border-color: #d7d7d7;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
 }
 
 .btn-secondary:hover {
   background: #e7e7e7;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
 }
 
-/* „ak-Buttons“ für Angebotsseite & Pop-up */
-.ak-button {
-  padding: 0.75rem 1.75rem;
-  border-radius: 999px;
-  border: 1px solid #111;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.15s ease;
-  display: inline-flex;
-  align-items: center;
+/* Buttons in Angebotskarten – zentriert */
+.ak-service-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
   justify-content: center;
-}
-
-.ak-button:hover {
-  background: #000;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* Vollbreiter Button im Modal */
@@ -164,6 +201,13 @@ nav a.active:hover {
   width: 100%;
   justify-content: center;
   margin-top: 0.5rem;
+}
+
+/* Kleine CTA-Hilfsklasse */
+.cta-text {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: var(--muted);
 }
 
 /* =========================
@@ -200,6 +244,7 @@ nav a.active:hover {
   font-size: 14px;
   color: #777;
   border: 1px dashed #c7c7c7;
+  max-width: 100%;
 }
 
 /* SECTION TITLES – generisch */
@@ -246,6 +291,7 @@ nav a.active:hover {
   justify-content: center;
   font-size: 12px;
   color: #777;
+  max-width: 100%;
 }
 
 .feature-title {
@@ -292,6 +338,7 @@ nav a.active:hover {
   justify-content: center;
   font-size: 14px;
   color: #777;
+  max-width: 100%;
 }
 
 /* =========================
@@ -396,6 +443,7 @@ nav a.active:hover {
   padding: 12px;
   font-size: 14px;
   color: #777;
+  max-width: 100%;
 }
 
 /* Kontaktformular-Bereich */
@@ -488,6 +536,7 @@ nav a.active:hover {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #777;
+  max-width: 100%;
 }
 
 .ak-hero-bg {
@@ -502,7 +551,7 @@ nav a.active:hover {
   margin: 0 auto;
   padding: 6rem 1.5rem 5rem;
   text-align: center;
-  margin-bottom: 4rem; /* zusätzlicher Abstand zum ersten Angebot */
+  margin-bottom: 4rem; /* Abstand zum ersten Angebot */
 }
 
 .ak-hero-kicker {
@@ -562,14 +611,6 @@ nav a.active:hover {
 .ak-service-description {
   margin-bottom: 1.75rem;
   line-height: 1.7;
-}
-
-/* Buttons in Angebotskarten – zentriert */
-.ak-service-actions {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 /* Bildbox */
@@ -637,53 +678,62 @@ nav a.active:hover {
 }
 
 /* =========================
-   EINHEITLICHER FOOTER
+   FOOTER – global (vollbreit)
    ========================= */
 
-footer,
-.ak-footer {
-  margin-top: 32px;
-  padding-top: 16px;
+.site-footer {
+  width: 100%;
+  background: #f5f5f5;
   border-top: 1px solid var(--border);
+  padding: 2.5rem clamp(1.5rem, 4vw, 3rem);
+}
+
+/* Inhalt an Seitenbreite anpassen */
+.footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
   font-size: 12px;
   color: var(--muted);
-  flex-wrap: wrap;
-  gap: 8px;
-  background: transparent;
 }
 
-.footer-social,
-.ak-footer-social {
+.footer-social {
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-social-label {
   font-size: 12px;
 }
 
-/* Social-Dots größer */
-.social-dot {
-  width: 24px;
-  height: 24px;
+/* Runde Icon-Buttons mit Font Awesome */
+.footer-icon {
+  width: 32px;
+  height: 32px;
   border-radius: 999px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-}
-
-.footer-social a,
-.ak-footer-social a {
-  text-decoration: none;
+  font-size: 14px;
   color: var(--muted);
+  text-decoration: none;
+
+  transition: background-color 0.18s ease, color 0.18s ease,
+    border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.footer-social a:hover,
-.ak-footer-social a:hover {
-  color: var(--text);
+.footer-icon:hover {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 
 /* =========================
@@ -821,6 +871,15 @@ footer,
     max-width: 360px;
     margin: 0 auto;
   }
+
+  .hero-image-placeholder,
+  .cta-image-placeholder {
+    aspect-ratio: 3 / 2;
+  }
+
+  .ak-service-media .ak-image-placeholder {
+    min-height: 220px;
+  }
 }
 
 @media (max-width: 960px) {
@@ -852,14 +911,22 @@ footer,
     grid-template-columns: 1fr;
   }
 
-  footer,
-  .ak-footer {
+  .ak-testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .ak-testimonial-grid {
-    grid-template-columns: 1fr;
+  .hero-image-placeholder,
+  .cta-image-placeholder {
+    aspect-ratio: 16 / 9;
+  }
+
+  .ak-service-media .ak-image-placeholder {
+    min-height: 180px;
   }
 }
 
