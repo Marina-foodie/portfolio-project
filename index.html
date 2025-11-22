@@ -209,44 +209,43 @@
           </div>
         </section>
       </main>
-    </div>
 
-    <!-- Neuer, vollbreiter Footer -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-left">©2025 - Atelier Klartext</div>
-        <div class="footer-social" aria-label="Social Media">
-          <span class="footer-social-label">Folge mir:</span>
-          <a
-            href="#"
-            class="footer-icon"
-            aria-label="LinkedIn (öffnet in neuem Tab)"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-          </a>
-          <a
-            href="#"
-            class="footer-icon"
-            aria-label="Instagram (öffnet in neuem Tab)"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-          </a>
-          <a
-            href="#"
-            class="footer-icon"
-            aria-label="Facebook (öffnet in neuem Tab)"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-          </a>
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-left">©2025 – Atelier Klartext</div>
+          <div class="footer-social" aria-label="Social Media">
+            <span class="footer-social-label">Folge mir:</span>
+            <a
+              href="#"
+              class="footer-icon"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a
+              href="#"
+              class="footer-icon"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a
+              href="#"
+              class="footer-icon"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
 
     <!-- Modal / Pop-up für kostenloses Erstgespräch -->
     <div class="ak-modal-overlay" id="ak-modal-overlay" aria-hidden="true">
@@ -347,7 +346,6 @@
 
         if (!overlay || !form || !dateInput) return;
 
-        // Heutiges Datum als Minimum setzen
         const today = new Date().toISOString().split("T")[0];
         dateInput.setAttribute("min", today);
 
@@ -363,7 +361,6 @@
           overlay.setAttribute("aria-hidden", "true");
         }
 
-        // Alle Buttons mit .ak-open-calendar öffnen das Modal
         openButtons.forEach((btn) => {
           btn.addEventListener("click", function (e) {
             e.preventDefault();
@@ -371,28 +368,24 @@
           });
         });
 
-        // X-Button schließt Modal
         if (closeBtn) {
           closeBtn.addEventListener("click", function () {
             closeModal();
           });
         }
 
-        // Klick auf Overlay (außerhalb der Box) schließt Modal
         overlay.addEventListener("click", function (e) {
           if (e.target === overlay) {
             closeModal();
           }
         });
 
-        // ESC schließt Modal
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape" && overlay.classList.contains("is-visible")) {
             closeModal();
           }
         });
 
-        // Formular absenden – aktuell nur Bestätigung
         form.addEventListener("submit", function (e) {
           e.preventDefault();
 

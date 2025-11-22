@@ -88,7 +88,7 @@
 
         <!-- Leistungen -->
         <section class="ak-services" aria-label="Leistungen">
-          <!-- Lektorat – Text links, Bild rechts -->
+          <!-- 1: Lektorat – Text links, Bild rechts -->
           <article class="ak-service-row">
             <div class="ak-service-text">
               <h2 class="ak-section-title">Lektorat</h2>
@@ -110,7 +110,7 @@
             </div>
           </article>
 
-          <!-- Korrektorat – Bild links, Text rechts -->
+          <!-- 2: Korrektorat – Bild links, Text rechts -->
           <article class="ak-service-row ak-service-row--reverse">
             <div class="ak-service-media">
               <div class="ak-image-placeholder" aria-hidden="true">
@@ -132,7 +132,7 @@
             </div>
           </article>
 
-          <!-- Coaching – wieder Text links, Bild rechts -->
+          <!-- 3: Coaching – Text links, Bild rechts -->
           <article class="ak-service-row">
             <div class="ak-service-text">
               <h2 class="ak-section-title">Coaching</h2>
@@ -209,33 +209,33 @@
 
       <footer class="site-footer">
         <div class="footer-inner">
-          <div class="footer-left">©2025 - Atelier Klartext</div>
+          <div class="footer-left">©2025 – Atelier Klartext</div>
           <div class="footer-social" aria-label="Social Media">
             <span class="footer-social-label">Folge mir:</span>
             <a
               href="#"
               class="footer-icon"
-              aria-label="LinkedIn (öffnet in neuem Tab)"
+              aria-label="LinkedIn"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             </a>
             <a
               href="#"
               class="footer-icon"
-              aria-label="Instagram (öffnet in neuem Tab)"
+              aria-label="Instagram"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
             <a
               href="#"
               class="footer-icon"
-              aria-label="Facebook (öffnet in neuem Tab)"
+              aria-label="Facebook"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
             </a>
@@ -332,7 +332,7 @@
       </div>
     </div>
 
-    <!-- JavaScript für Modal / Pop-up mit kleinen A11y-Verbesserungen -->
+    <!-- JavaScript für Modal / Pop-up -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const openButtons = document.querySelectorAll(".ak-open-calendar");
@@ -341,7 +341,6 @@
         const form = document.getElementById("ak-booking-form");
         const dateInput = document.getElementById("ak-date");
 
-        // Heutiges Datum als Minimum setzen
         const today = new Date().toISOString().split("T")[0];
         dateInput.setAttribute("min", today);
 
@@ -357,7 +356,6 @@
           overlay.setAttribute("aria-hidden", "true");
         }
 
-        // Alle "kostenloses Erstgespräch"-Buttons öffnen das Modal
         openButtons.forEach((btn) => {
           btn.addEventListener("click", function (e) {
             e.preventDefault();
@@ -365,28 +363,24 @@
           });
         });
 
-        // X-Button schließt Modal
         if (closeBtn) {
           closeBtn.addEventListener("click", function () {
             closeModal();
           });
         }
 
-        // Klick auf Overlay (außerhalb der Box) schließt Modal
         overlay.addEventListener("click", function (e) {
           if (e.target === overlay) {
             closeModal();
           }
         });
 
-        // ESC schließt Modal
         document.addEventListener("keydown", function (e) {
           if (e.key === "Escape" && overlay.classList.contains("is-visible")) {
             closeModal();
           }
         });
 
-        // Formular absenden – aktuell nur Bestätigung
         form.addEventListener("submit", function (e) {
           e.preventDefault();
 
